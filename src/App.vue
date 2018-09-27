@@ -5,6 +5,7 @@
 </template>
 
 <script>
+export default {};
 </script>
 
 <style>
@@ -17,5 +18,8 @@ a {
 body {
     font-family: "PingFangSC-Semibold";
     margin: 0px;
+}
+.text-content {
+    font-family: "PingFangSC-Regular";
 }
 </style>

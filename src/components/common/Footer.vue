@@ -31,10 +31,12 @@ export default {
 
 <style>
 #footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     height: 49px;
     width: 100%;
+    opacity: 1;
+    background-color: #ffffff;
 }
 .top-border {
     width: 100%;

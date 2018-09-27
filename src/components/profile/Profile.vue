@@ -34,6 +34,7 @@
 import LoginInput from './LoginInput.vue';
 import ProfileCell from './ProfileCell.vue';
 import Footer from '../common/Footer.vue';
+import {getCookie, setCookie} from '../../utils/utils.js';
 
 const MOBILE_TITLE = '手机号';
 const VERIFYCODE_TITLE = '短信验证码';
@@ -50,7 +51,8 @@ export default {
     },
     computed: {
         isLogin() {
-            return true;
+            let session = getCookie('isLogin');
+            return Boolean(session);
         }
     },
     name: 'app',
@@ -95,6 +97,9 @@ export default {
             ).then(
                 res => {
                     window.console.log(res);
+                    setCookie('isLogin', 1, 90 * 86400);
+                    // force refresh
+                    this.$router.go(0);
                 }
             );
         },
@@ -103,7 +108,7 @@ export default {
         },
         tabClicked(tabIndex) {
             if (tabIndex === 0) {
-                window.history.length > 1 ? this.$router.go(-1) : this.$router.push("home");
+                this.$router.push("home");
             }
         }
     },
