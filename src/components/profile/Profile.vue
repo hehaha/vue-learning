@@ -104,7 +104,9 @@ export default {
             );
         },
         profileCellClicked(cell) {
-            return cell;
+            if (cell.title === '我的简历') {
+                this.$router.push('/profile/detail');
+            }
         },
         tabClicked(tabIndex) {
             if (tabIndex === 0) {

@@ -71,7 +71,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .page-container {
     margin-bottom: 49px;
 }
